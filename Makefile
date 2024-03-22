@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-Wall -Werror -Wextra
 
-BUILD_DIR=./build
+BUILD_DIR=build
 
 SRC=$(wildcard *.cpp)
 OBJ=$(addprefix $(BUILD_DIR)/,$(SRC:%.cpp=%.o))
@@ -27,4 +27,3 @@ clean_gcov:
 	cd $(BUILD_DIR) && rm -rf *.gcno *.gcda
 
 clean: clean_obj clean_gcov
-	cd $(TEST_DIR) && make clean
